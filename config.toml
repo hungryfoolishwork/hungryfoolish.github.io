@@ -1,0 +1,13 @@
+baseURL = 'https://hungryfoolish.work/'
+languageCode = 'en-us'
+title = 'Hungry Foolish'
+author = "Nathan Borror"
+canonifyurls = true
+theme = "black-and-light"
+
+pygmentsstyle       = "bw"
+pygmentscodefences  = true
+
+[params]
+  sitename = "Hungry Foolish"
+  disableWebFonts = false
