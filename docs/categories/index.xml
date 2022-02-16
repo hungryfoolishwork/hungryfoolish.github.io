@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hungry Foolish</title>
-    <link>https://hungryfoolish.work/categories/</link>
+    <link>https://hungryfoolishwork.github.io/categories/</link>
     <description>Recent content in Categories on Hungry Foolish</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://hungryfoolish.work/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://hungryfoolishwork.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
