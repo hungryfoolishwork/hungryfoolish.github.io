@@ -1,0 +1,6 @@
+<figure{{ with .Get "class" }} class="{{.}}"{{ end }}>
+    <a href="{{ .Get "src" }}"><img src="{{ .Get "src" }}"></a>
+    <figcaption>
+        {{ .Inner | markdownify }}
+    </figcaption>
+</figure>

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<main>
+    <header>
+        <h1>{{ .Site.Title }}</h1>
+    </header>
+    <article>
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+    </article>
+    <footer>Copyright 2021</footer>
+</main>
+{{ end }}

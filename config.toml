@@ -1,12 +1,12 @@
-baseURL = 'https://hungryfoolishwork.github.io/'
+baseURL = 'https://hungryfoolish.work/'
 languageCode = 'en-us'
 title = 'Hungry Foolish'
 author = "Nathan Borror"
 canonifyurls = true
-theme = "black-and-light"
+theme = "foolish"
 publishDir = "docs"
 
-pygmentsstyle       = "bw"
+pygmentsstyle       = 'bw'
 pygmentscodefences  = true
 
 [params]

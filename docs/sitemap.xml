@@ -1,14 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://hungryfoolishwork.github.io/about/</loc>
-    <lastmod>2022-02-15T15:52:07-08:00</lastmod>
-  </url><url>
-    <loc>https://hungryfoolishwork.github.io/categories/</loc>
-  </url><url>
-    <loc>https://hungryfoolishwork.github.io/</loc>
-  </url><url>
-    <loc>https://hungryfoolishwork.github.io/tags/</loc>
-  </url>
-</urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://hungryfoolish.work/posts/hello/</loc><lastmod>2022-02-16T12:00:00-08:00</lastmod></url><url><loc>https://hungryfoolish.work/</loc><lastmod>2022-02-16T12:00:00-08:00</lastmod></url><url><loc>https://hungryfoolish.work/posts/</loc><lastmod>2022-02-16T12:00:00-08:00</lastmod></url><url><loc>https://hungryfoolish.work/about/</loc><lastmod>2022-02-16T09:31:04-08:00</lastmod></url><url><loc>https://hungryfoolish.work/categories/</loc></url><url><loc>https://hungryfoolish.work/tags/</loc></url></urlset>
