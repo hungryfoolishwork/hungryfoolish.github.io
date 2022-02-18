@@ -23,5 +23,7 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./docs
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: hungryfoolishwork/hungryfoolishwork.github.io
+          publish_branch: master
+          keep_files: true
