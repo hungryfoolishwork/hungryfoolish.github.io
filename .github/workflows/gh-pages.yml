@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - master
-  # schedule:
-  #   - cron: "0 6 * * *"
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -25,7 +23,5 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          external_repository: hungryfoolishwork/hungryfoolishwork.github.io
-          publish_branch: master
-          keep_files: true
+          github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./docs
