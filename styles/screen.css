@@ -14,7 +14,7 @@
     --body-weight: 400;
 
     --header-size: 22px;
-    --header-line-height: var(--margin);
+    --header-line-height: var(--body-line-height);
     --header-weight: 800;
     
     --meta-size: 13px;
@@ -35,12 +35,14 @@
     --system-yellow: #FFC347;
     --system-yellow-wash: #FFFFBB;
     --system-light-gray: #E5E5E5;
+    --system-light-blue: #419CFF;
     --system-wash: #F2F2F2;
 
     --overhang: -80px;
 }
 
 body {
+    margin: 0 var(--body-margin);
     font-family: var(--serif-text);
     font-size: var(--body-size);
     line-height: var(--body-line-height);
@@ -71,7 +73,7 @@ header h1 a {
 }
 
 article {
-    margin: calc(var(--margin) * 2) 0 calc(var(--margin) * 4) 0;
+    margin: calc(var(--margin) * 2) 0;
     clear: both;
 }
 
@@ -108,6 +110,9 @@ h2 + h3 {
     font-size: var(--meta-size);
     font-weight: var(--meta-weight);
     opacity: .4;
+}
+h3 + .summary {
+    margin-top: calc(var(--margin) * -0.75);
 }
 
 em {

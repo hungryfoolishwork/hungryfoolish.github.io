@@ -1,0 +1,48 @@
+
+/* Dark Mode */
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--system-black);
+        --foreground-color: var(--system-white);
+        --anchor-color: var(--system-light-blue);
+    }
+    header h1 a {
+        background-image: url(/images/logo_dark.svg);
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 1000px) { 
+}
+
+/* Phone */
+@media screen and (max-width: 760px) { 
+    :root {
+        --margin: 22px;
+        --body-margin: calc(var(--margin) * 1.5);
+        --body-size: 16px;
+        --header-size: 18px;
+        --meta-size: 12px;
+        --meta-line-height: 18px;
+        --overhang: -80px;
+    }
+    header {
+        margin: calc(var(--margin) * 2) 0;
+    }
+    header h1 a {
+        width: 300px;
+        height: 50px;
+    }
+    article {
+        margin: calc(var(--margin) * 1) 0 calc(var(--margin) * 2) 0;
+    }
+    figure.small {
+        width: 150px;
+    }
+    figure.medium {
+        width: 250px;
+    }
+    figure.large {
+        width: 100%;
+    }
+}

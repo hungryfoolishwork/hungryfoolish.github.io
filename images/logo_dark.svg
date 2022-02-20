@@ -2,16 +2,16 @@
 <svg width="500px" height="100px" viewBox="0 0 500 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <style>
         .arrow { 
-            stroke: #BBB;
+            stroke: #666;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
         .work { 
-            fill: #BBB; 
+            fill: #666; 
             fill-rule: nonzero;
         }
         .hungry { 
-            fill: #000; 
+            fill: #FFF; 
             fill-rule: nonzero;
         }
     </style>
