@@ -2,7 +2,7 @@
 
 :root {
     --margin: 25px;
-    --max-width: 700px;
+    --max-width: 750px;
     
     --body-margin: calc(var(--margin) * 4);
 
@@ -38,7 +38,7 @@
     --system-light-blue: #419CFF;
     --system-wash: #F2F2F2;
 
-    --overhang: -80px;
+    --hang: -80px;
 }
 
 body {
@@ -57,13 +57,13 @@ main {
 }
 
 header {
-    margin: calc(var(--margin) * 4) 0;
+    margin: calc(var(--margin) * 2) 0;
 }
 header h1 a {
     display: block;
     margin: 0 auto;
-    width: 450px;
-    height: 100px;
+    width: 600px;
+    height: 180px;
     background-image: url(/images/logo.svg);
     background-repeat: no-repeat;
     background-size: 100%;
@@ -256,16 +256,16 @@ figure.right {
     margin-top: 0;
     margin-left: var(--margin);
 }
-figure.right.overhang {
-    margin-right: var(--overhang);
+figure.right.hang {
+    margin-right: var(--hang);
 }
 figure.left {
     float: left;
     margin-top: 0;
     margin-right: var(--margin);
 }
-figure.left.overhang {
-    margin-left: var(--overhang);
+figure.left.hang {
+    margin-left: var(--hang);
 }
 figure.center {
     margin-right: auto;
