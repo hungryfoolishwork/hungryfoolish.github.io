@@ -30,8 +30,7 @@
         margin: calc(var(--margin) * 2) 0;
     }
     header h1 a {
-        width: 420px;
-        height: 100px;
+        height: 110px;
     }
     article {
         margin: calc(var(--margin) * 1) 0 calc(var(--margin) * 2) 0;
@@ -44,5 +43,12 @@
     }
     figure.large {
         width: 100%;
+    }
+}
+
+/* Phone Small */
+@media screen and (max-width: 350px) {
+    header h1 a {
+        height: 90px;
     }
 }
