@@ -1,54 +1,87 @@
-
 /* Dark Mode */
 @media screen and (prefers-color-scheme: dark) {
     :root {
-        --background-color: var(--system-black);
-        --foreground-color: var(--system-white);
-        --anchor-color: var(--system-light-blue);
+        --anchor-underline-color: rgba(255, 255, 255, 0.2);
+
+        --system-white: rgba(0, 0, 0, 0.9);
+        --system-black: #F7F5F2;
+        --system-red: #723F2D;
+        --system-yellow: #72612B;
+        --system-green: #425F35;
+        --system-blue: #315A6F;
     }
+
     header h1 a {
         background-image: url(/images/logo_dark.svg);
     }
 }
 
 /* Tablet */
-@media screen and (max-width: 1000px) { 
+@media screen and (max-width: 1000px) {
+    :root {
+        --hang: 0;
+    }
+
+    body {
+        margin: 40px;
+    }
+
+    header h1 a {
+        width: 250px;
+        height: 160px;
+    }
 }
 
 /* Phone */
-@media screen and (max-width: 760px) { 
+@media screen and (max-width: 760px) {
     :root {
-        --margin: 22px;
-        --body-margin: calc(var(--margin) * 1.5);
-        --body-size: 16px;
-        --header-size: 18px;
-        --meta-size: 12px;
-        --meta-line-height: 18px;
-        --overhang: -80px;
+        --body-size: 18px;
+        --body-line-height: 25px;
+        --body-letter-spacing: -0.014em;
+        --body-weight: 400;
+
+        --title-size: 24px;
+        --title-line-height: 34px;
+        --title-weight: 700;
+        --title-letter-spacing: -0.019em;
+
+        --header-size: var(--title-size);
+        --header-line-height: var(--title-line-height);
+        --header-weight: 700;
+        --header-letter-spacing: var(--title-letter-spacing);
+
+        --caption-size: 15px;
+        --caption-line-height: 21px;
+        --caption-weight: var(--body-weight);
+        --caption-letter-spacing: -0.009em;
     }
+
+    body {
+        grid-template-columns: auto auto;
+        grid-template-areas:
+            "header header"
+            "main main"
+            "aside aside"
+            "footer footer";
+        margin: 40px;
+    }
+
     header {
-        margin: calc(var(--margin) * 2) 0;
+        margin-top: 0;
+        margin-bottom: calc(var(--margin) * 1);
     }
+
     header h1 a {
-        height: 110px;
+        width: 220px;
+        height: 140px;
     }
-    article {
-        margin: calc(var(--margin) * 1) 0 calc(var(--margin) * 2) 0;
-    }
-    figure.small {
-        width: 150px;
-    }
-    figure.medium {
-        width: 250px;
-    }
+
+    figure.small,
+    figure.medium,
     figure.large {
         width: 100%;
     }
 }
 
 /* Phone Small */
-@media screen and (max-width: 350px) {
-    header h1 a {
-        height: 90px;
-    }
-}
+@media screen and (max-width: 350px) {}
