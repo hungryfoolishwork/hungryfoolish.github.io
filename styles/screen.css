@@ -3,7 +3,7 @@
 
 :root {
     --margin: 34px;
-    --max-width: 768px;
+    --max-width: 1024px;
 
     --font-family: 'Inter', -apple-system, sans-serif;
     --font-feature-settings: "ss01", "zero", "frac", "cv05", "cv11";
@@ -52,12 +52,18 @@
     --hang: -120px;
 }
 
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Inter var', sans-serif;
+    }
+}
+
 body {
     display: grid;
     grid-template-columns: auto 300px;
     grid-template-areas:
         "header header"
-        "main main"
+        "main aside"
         "footer footer";
     margin: 50px auto;
     padding-top: 50px;
@@ -74,41 +80,44 @@ body {
 
 header {
     grid-area: header;
-    margin-top: calc(var(--margin) * 1);
-    margin-bottom: calc(var(--margin) * 2);
 }
 
 header h1 {
     margin: 0;
 }
 
-header h1 a {
-    display: block;
-    margin: 0;
-    width: 400px;
-    height: 244px;
-    background-image: url(/images/logo.svg);
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: 0 50%;
-    overflow: hidden;
-    text-indent: -9999px;
-}
-
-body.single header {
-    margin-top: 0;
-    margin-bottom: calc(var(--margin) * 2);
-}
-
-body.single header h1 a {
-    width: 768px;
-    height: 81px;
-    background-image: url(/images/logo_sm.svg);
+header h2 {
+    margin: 0 !important;
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    font-weight: var(--body-weight);
+    letter-spacing: var(--body-letter-spacing);
 }
 
 main {
     grid-area: main;
     margin-bottom: calc(var(--margin) * 2);
+}
+
+aside {
+    grid-area: aside;
+    padding-left: 100px;
+}
+
+aside ul li::before {
+    content: "";
+}
+
+aside a {
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--system-black);
+    opacity: 0.3;
+}
+
+aside a:hover {
+    text-decoration: none;
+    opacity: 1;
 }
 
 article {
@@ -192,12 +201,6 @@ h1 {
     line-height: var(--title-line-height);
     font-weight: var(--title-weight);
     letter-spacing: var(--title-letter-spacing);
-}
-
-h1+h2 {
-    margin-top: calc(var(--margin) * -1);
-    font-weight: var(--caption-weight);
-    opacity: var(--caption-opacity);
 }
 
 h2+h3 {
