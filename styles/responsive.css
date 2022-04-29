@@ -2,13 +2,29 @@
 /* ------------------------------------------------------------------ */
 
 @media screen and (max-width: 1024px) {
+    :root {
+        --hang: 0px;
+    }
+
     body {
-        grid-template-columns: auto 180px;
+        grid-template-columns: minmax(0, 1fr) 150px;
         margin: 50px;
     }
 
     aside {
-        padding-left: 60px;
+        padding-left: 40px;
+    }
+
+    figure.small {
+        width: 200px;
+    }
+
+    figure.medium {
+        width: 400px;
+    }
+
+    .gallery img {
+        height: 320px;
     }
 }
 
@@ -18,7 +34,7 @@
 @media screen and (max-width: 760px) {
     :root {
         --body-size: 18px;
-        --body-line-height: 25px;
+        --body-line-height: 27px;
         --body-letter-spacing: -0.014em;
         --body-weight: 400;
 
@@ -39,29 +55,51 @@
     }
 
     body {
-        grid-template-columns: auto auto;
+        grid-template-columns: minmax(0, 1fr) auto;
         grid-template-areas:
             "header header"
             "main main"
-            "aside aside"
-            "footer footer";
-        margin: 40px;
+            "footer footer"
+            "aside aside";
+        margin: 0 40px;
     }
 
     aside {
         padding-left: 0;
     }
 
+    aside li {
+        margin: 0;
+    }
+
+    aside li:last-child {
+        border-bottom: none;
+    }
+
+    aside li a {
+        display: block;
+        margin: 0;
+        padding: 8px 0;
+    }
+
     figure {
         float: none !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        margin-left: -40px !important;
+        margin-right: -40px !important;
     }
 
     figure.small,
-    figure.medium,
-    figure.large {
-        width: 100%;
+    figure.medium {
+        width: fit-content;
+    }
+
+    .gallery {
+        margin-left: -40px;
+        margin-right: -40px;
+    }
+
+    .gallery img {
+        height: 250px;
     }
 }
 
@@ -72,9 +110,10 @@
     :root {
         --system-black: #F7F5F2;
         --system-white: rgba(0, 0, 0, 0.9);
-        --system-red: var(--system-dark-red);
-        --system-yellow: var(--system-dark-yellow);
-        --system-green: var(--system-dark-green);
-        --system-blue: var(--system-dark-blue);
+        --system-light-red: var(--system-dark-red);
+        --system-light-yellow: var(--system-dark-yellow);
+        --system-light-green: var(--system-dark-green);
+        --system-light-blue: var(--system-dark-blue);
+        --system-light-gray: rgba(255, 255, 255, 0.15);
     }
 }

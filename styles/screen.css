@@ -4,6 +4,7 @@
 :root {
     --margin: 34px;
     --max-width: 1024px;
+    --aside-width: 300px;
 
     --font-family: 'Inter', -apple-system, sans-serif;
     --font-feature-settings: "ss01", "zero", "frac", "cv05", "cv11";
@@ -66,7 +67,7 @@
 
 body {
     display: grid;
-    grid-template-columns: auto 300px;
+    grid-template-columns: minmax(0, 1fr) var(--aside-width);
     grid-template-areas:
         "header header"
         "main aside"
@@ -82,6 +83,8 @@ body {
     background-color: var(--system-white);
     color: var(--system-black);
     font-feature-settings: var(--font-feature-settings);
+    overflow-wrap: anywhere;
+    hyphens: auto;
 }
 
 header {
@@ -111,7 +114,7 @@ aside {
 }
 
 aside ul li::before {
-    content: "";
+    display: none;
 }
 
 aside a {
@@ -134,7 +137,6 @@ footer {
     grid-area: footer;
     margin: 100px 0;
     padding: 20px 0;
-    border-top: 1px solid var(--system-black);
     font-size: var(--caption-size);
     font-weight: var(--caption-weight);
     letter-spacing: var(--caption-letter-spacing);
@@ -144,7 +146,6 @@ footer {
 section {
     margin-bottom: var(--margin);
     padding-bottom: var(--margin);
-    border-bottom: 1px solid var(--system-black);
 }
 
 section *:last-child {
@@ -197,9 +198,13 @@ h6+ul {
     margin-top: calc(var(--margin) * -1);
 }
 
-h3+.summary,
+h4.timestamp {
+    opacity: var(--caption-opacity);
+}
+
+h4+.summary,
 p+.continue {
-    margin-top: calc(var(--margin) * -0.5);
+    margin-top: calc(var(--margin) * -0.75);
 }
 
 .continue {
@@ -270,11 +275,11 @@ img {
 }
 
 blockquote {
-    margin-left: calc(var(--margin) * -1);
-    margin-right: calc(var(--margin) * -1);
-    padding: var(--margin);
-    background-color: var(--system-yellow);
-    border-radius: var(--border-radius);
+    padding: 20px 0;
+    border-top: 1px solid var(--system-light-red);
+    border-bottom: 1px solid var(--system-light-red);
+    color: var(--system-dark-red);
+    font-style: italic;
 }
 
 blockquote *:first-child {
@@ -283,6 +288,10 @@ blockquote *:first-child {
 
 blockquote *:last-child {
     margin-bottom: 0;
+}
+
+blockquote+blockquote {
+    margin-top: calc(var(--margin) * -0.9);
 }
 
 hr {
@@ -305,12 +314,15 @@ li::before {
 pre {
     padding: 20px;
     background: var(--system-black);
-    font-family: var(--mono);
-    font-size: 12px;
-    line-height: 18px;
     color: var(--system-white);
     border-radius: var(--border-radius);
-    overflow: scroll;
+    overflow: auto;
+}
+
+code {
+    font-family: var(--mono);
+    font-size: var(--mono-size);
+    line-height: var(--mono-line-height);
 }
 
 /* Forms */
@@ -411,7 +423,7 @@ td[align="right"] {
     text-align: right;
 }
 
-/* Figures */
+/* Shortcodes */
 /* ------------------------------------------------------------------ */
 
 figure {
@@ -455,10 +467,6 @@ figure.medium {
     width: 450px;
 }
 
-figure.large {
-    width: 650px;
-}
-
 figcaption {
     font-size: var(--caption-size);
     font-weight: var(--caption-weight);
@@ -472,6 +480,27 @@ figcaption a {
     color: inherit;
 }
 
+.gallery {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 20px 0;
+    border-top: 1px solid var(--system-light-gray);
+    border-bottom: 1px solid var(--system-light-gray);
+    overflow: scroll;
+}
+
+.gallery a {
+    display: block;
+    padding: 0;
+}
+
+.gallery img {
+    display: block;
+    width: auto;
+    height: 450px;
+}
+
 /* Pagination */
 /* ------------------------------------------------------------------ */
 
@@ -483,11 +512,6 @@ figcaption a {
 
 .pagination li::before {
     content: "";
-}
-
-.pagination .page-item:first-child,
-.pagination .page-item:last-child {
-    display: none;
 }
 
 .pagination .page-item {
@@ -523,10 +547,17 @@ figcaption a {
     color: var(--system-white);
 }
 
+.pagination .page-item a[aria-label=First] span,
+.pagination .page-item a[aria-label=Last] span,
 .pagination .page-item a[aria-label=Previous] span,
 .pagination .page-item a[aria-label=Next] span {
     display: none;
 }
+
+.pagination .page-item a[aria-label=First]:after {
+    content: "⇐";
+}
+
 
 .pagination .page-item a[aria-label=Previous]:after {
     content: "←";
@@ -534,4 +565,16 @@ figcaption a {
 
 .pagination .page-item a[aria-label=Next]:after {
     content: "→";
+}
+
+.pagination .page-item a[aria-label=Last]:after {
+    content: "⇒";
+}
+
+/* Custom */
+/* ------------------------------------------------------------------ */
+
+.framed img {
+    border: 1px solid var(--system-light-gray);
+    border-radius: var(--border-radius);
 }
