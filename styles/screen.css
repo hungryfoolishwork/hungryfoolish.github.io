@@ -43,6 +43,7 @@ p {
     font-size: 18px;
     line-height: 25px;
     text-align: justify;
+    hyphens: auto;
 }
 
 em {
@@ -60,4 +61,15 @@ footer p {
     font-family: "Computer Modern Concrete", sans-serif;
     font-size: 15px;
     text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    article {
+        padding: 60px 30px;
+        width: auto;
+    }
+    footer {
+        padding: 0 30px;
+        width: auto;
+    }
 }
